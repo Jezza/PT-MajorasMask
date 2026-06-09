@@ -126,11 +126,15 @@ function onClear(slot_data)
     adjust_display_cost()
 
     -- read YAML options
-    local function setFromSlotData(slot_data_key, item_code)
+    local function setFromSlotData(slot_data_key, item_code, default_on)
         local v = slot_data[slot_data_key]
         if not v then
-            print(string.format("Could not find key '%s' in slot data", slot_data_key))
-            return nil
+            if not default_on then
+                print(string.format("Could not find key '%s' in slot data", slot_data_key))
+                return nil
+            else
+                v = 1
+            end
         end
 
         local obj = Tracker:FindObjectForCode(item_code)
@@ -159,14 +163,14 @@ function onClear(slot_data)
     setFromSlotData("majora_remains_required","majora_remains_required")
     setFromSlotData("moon_remains_required","moon_remains_required")
     setFromSlotData("remains_allow_boss_warps","boss_warps_with_remains")
-    setFromSlotData("camc","camc")
+    setFromSlotData("camc","camc", true)
     --setFromSlotData("swordless","swordless")
     --setFromSlotData("shieldless","shieldless")
-    setFromSlotData("start_with_soaring","start_with_soaring")
+    setFromSlotData("start_with_soaring","start_with_soaring", true)
     --setFromSlotData("starting_hearts","starting_hearts")
     --setFromSlotData("starting_hearts_are_containers_or_pieces","starting_hearts_are_containers_or_pieces")
     setFromSlotData("shuffle_regional_maps","shuffle_regional_maps")
-    setFromSlotData("shuffle_boss_remains","shuffle_boss_remains")
+    setFromSlotData("shuffle_boss_remains","shuffle_boss_remains", true)
     setFromSlotData("shuffle_spiderhouse_reward","shuffle_spiderhouse_reward")
     setFromSlotData("skullsanity","skullsanity")
     setFromSlotData("required_skull_tokens","required_skull_tokens")
@@ -180,10 +184,10 @@ function onClear(slot_data)
     setFromSlotData("shuffle_great_fairy_rewards","shuffle_great_fairy_rewards")
     setFromSlotData("fairysanity","fairysanity")
     setFromSlotData("required_stray_fairies","required_stray_fairies")
-    setFromSlotData("start_with_consumables","start_with_consumables")
-    setFromSlotData("permanent_chateau_romani","permanent_chateau_romani")
+    setFromSlotData("start_with_consumables","start_with_consumables", true)
+    setFromSlotData("permanent_chateau_romani","permanent_chateau_romani", true)
     setFromSlotData("start_with_inverted_time","start_with_inverted_time")
-    setFromSlotData("receive_filled_wallets","receive_filled_wallets")
+    setFromSlotData("receive_filled_wallets","receive_filled_wallets", true)
     setFromSlotData("damage_multiplier","damage_multiplier")
     setFromSlotData("death_behavior","death_behavior")
     --setFromSlotData("death_link","death_link")
@@ -224,7 +228,7 @@ function onItem(index, item_id, item_name, player_number)
                 obj.Active = true
             end
         elseif mapping_entry[2] == "consumable" then
-            obj.AcquiredCount = obj.AcquiredCount + obj.Increment
+            obj.AcquiredCount = obj.AcquiredCount + (obj.Increment or 1)
         elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
             print(string.format("onItem: unknown item type %s for code %s", mapping_entry[2], mapping_entry[1]))
         end

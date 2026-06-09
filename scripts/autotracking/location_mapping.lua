@@ -3,6 +3,17 @@ LOCATION_MAPPING = {
     [0x3469420061A00] = {"@Clock Town/Before Clock Town/Chest"},
 
     [0x3469420000037] = {"@Clock Town/Spawn Area/Link's Inventory (Kokiri Sword)"},
+    [0x3469420000032] = {"@Clock Town/Spawn Area/Link's Inventory (Hero's Shield)"},
+
+    [0x34694200D0000] = {"@Clock Town/Spawn Area/Link's Inventory (Heart Item #1)"},
+    [0x34694200D0001] = {"@Clock Town/Spawn Area/Link's Inventory (Heart Item #2)"},
+    [0x34694200D0002] = {"@Clock Town/Spawn Area/Link's Inventory (Heart Item #3)"},
+    [0x34694200D0003] = {"@Clock Town/Spawn Area/Link's Inventory (Heart Item #4)"},
+    [0x34694200D0004] = {"@Clock Town/Spawn Area/Link's Inventory (Heart Item #5)"},
+    [0x34694200D0005] = {"@Clock Town/Spawn Area/Link's Inventory (Heart Item #6)"},
+    [0x34694200D0006] = {"@Clock Town/Spawn Area/Link's Inventory (Heart Item #7)"},
+    [0x34694200D0007] = {"@Clock Town/Spawn Area/Link's Inventory (Heart Item #8)"},
+
     [0x3469420056F0A] = {"@Clock Town/South Clock Town Clock Tower/Freestanding HP"},
     [0x3469420040068] = {"@Clock Town/Clock Tower/Clock Tower Happy Mask Salesman #1"},
     [0x3469420000078] = {"@Clock Town/Clock Tower/Clock Tower Happy Mask Salesman #2"},
@@ -35,7 +46,7 @@ LOCATION_MAPPING = {
     [0x3469420062900] = {"@Clock Town/Bomber's Secret Hideout/Bomber's Hideout Chest"},
     [0x3469420000096] = {"@Termina Field/East Clock Town Astral Observatory/East Clock Town Astral Observatory"},
     [0x34694200000A0] = {"@Clock Town/Stock Pot Inn/Stock Pot Inn Reservation (Day 1: from 1 PM to 4 PM)"},
-    [0x34694200000AA] = {"@Clock Town/Stock Pot Inn/Stock Pot Inn Midnight Meeting (Night 1: 12 to 6 AM)"},
+    [0x34694200000AA] = {"@Clock Town/Stock Pot Inn/Stock Pot Inn Midnight Meeting (Night 1: 11:30 PM)"},
     [0x3469420066100] = {"@Clock Town/Stock Pot Inn/Stock Pot Inn Locked Room Chest"},
     [0x3469420066101] = {"@Clock Town/Stock Pot Inn/Stock Pot Inn Employee Room Chest (Final Night)"},
     [0x346942007027D] = {"@Clock Town/Stock Pot Inn/Stock Pot Inn Midnight Toilet Hand"},
